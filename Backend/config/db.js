@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export const connectDB = async () =>{
-    await mongoose.connect('mongodb+srv://himanshuSable:24882488@cluster0.fztlujz.mongodb.net/food-del').then(()=>console.log("DB connected"));
+    await mongoose.connect(process.env.MONGO_URI).then(()=>console.log("DB connected"));
 }
